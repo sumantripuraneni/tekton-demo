@@ -1,0 +1,16 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: multi-task
+spec:
+  steps:
+    - name: task01
+      image: alpine
+      script: | 
+        #!/bin/sh
+        echo "First task"
+    - name: task02
+      image: alpine
+      script: | 
+        #!/bin/sh
+        echo "Second task"

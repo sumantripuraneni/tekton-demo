@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1
+kind: TaskRun
+metadata:
+  name: param-task-run
+spec:
+  params:
+   - name: print
+     value: "Suman"
+  taskRef:
+    name: hello-param

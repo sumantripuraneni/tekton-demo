@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: hello-param
+spec:
+  params:
+    - name: print
+      type: string
+      default: world
+  steps:
+    - name: print-param
+      image: alpine
+      script: | 
+        #!/bin/sh
+        echo "hello, $(params.print)"
